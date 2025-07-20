@@ -1,0 +1,130 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background: #f7f9fb;
+  padding: 0;
+  color: #222;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+h2 {
+  color: #2a5d9f;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px #e3eaf3;
+  text-align: center;
+  margin-top: 60px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e3eaf3;
+  box-shadow: 0 2px 12px rgba(42,93,159,0.07);
+  padding: 32px 48px;
+  margin: 40px auto 0 auto;
+  border-radius: 18px;
+  max-width: 90vw;
+  width: 100%;
+  min-width: 320px;
+  font-size: 1.2em;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.card p {
+  font-size: 1.2em;
+  margin-bottom: 24px;
+  word-break: break-all;
+  white-space: pre-line;
+}
+button {
+  margin: 10px 12px 0 0;
+  padding: 14px 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2a5d9f;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(42,93,159,0.08);
+}
+button:hover, button:focus {
+  background: #17406a;
+  outline: none;
+}
+button[style*="background:#f0ad4e;"] {
+  background: #f0ad4e !important;
+  color: #fff !important;
+}
+#progressBarContainer {
+  width: 100vw;
+  background: #e3eaf3;
+  height: 32px;
+  border-radius: 0 0 18px 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(42,93,159,0.08);
+}
+#progressBar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #2a5d9f 0%, #6bb6ff 100%);
+  border-radius: 0 0 18px 18px;
+  transition: width 0.3s;
+}
+#progressDots div {
+  background: #b0c4de;
+  width: 2px;
+  height: 100%;
+  border-radius: 1px;
+}
+#progressText {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  color: #2a5d9f;
+  font-weight: bold;
+  line-height: 32px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px #fff;
+}
+input[type="file"] {
+  margin: 32px auto 16px auto;
+  font-size: 18px;
+  border: 1px solid #e3eaf3;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(42,93,159,0.04);
+  display: block;
+  width: 60vw;
+  max-width: 600px;
+  min-width: 240px;
+}
+.download-buttons {
+  text-align: center;
+  margin: 40px 0 30px 0;
+}
+@media (max-width: 900px) {
+  .card { padding: 18px 5vw; font-size: 1em; }
+  input[type="file"] { width: 90vw; }
+}
+@media (max-width: 700px) {
+  .card { padding: 12px 2vw; font-size: 0.95em; }
+  #progressBarContainer { height: 20px; }
+  #progressText { font-size: 12px; }
+  button { font-size: 14px; padding: 8px 12px; }
+  input[type="file"] { font-size: 14px; }
+}

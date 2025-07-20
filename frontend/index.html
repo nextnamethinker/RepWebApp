@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>整合性確認アプリ</title>
+  <!-- 外部CSSファイルを読み込む -->
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<!-- 進捗バー -->
+<div style="margin-bottom:30px;">
+  <div id="progressBarContainer">
+    <div id="progressBar"></div>
+    <div id="progressDots" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></div>
+    <span id="progressText"></span>
+  </div>
+</div>
+
+<h2>整合性があるかどうかを判断してください。</h2>
+<!-- ユーザー名入力フィールド -->
+<div style="text-align: center;">
+  <label for="userNameInput">ユーザー名:</label>
+  <input type="text" id="userNameInput" placeholder="英数字でユーザー名を入力" pattern="[a-zA-Z0-9]+" required>
+</div>
+<!-- 開始ボタンを追加 -->
+<div style="margin: 20px 0; text-align: center;">
+  <button id="startButton" onclick="startEvaluation()" style="padding: 10px 20px; font-size: 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">評価を開始</button>
+</div>
+<div class="card" id="comparisonArea" style="display:none;">
+  <p><strong>戦略：</strong><span id="strategyText"></span></p>
+  <p><strong>取り組み：</strong><span id="sustainabilityText"></span></p>
+  <button onclick="recordJudgment(5)">5（整合性あり）</button>
+  <button onclick="recordJudgment(4)">4（やや整合性あり）</button>
+  <button onclick="recordJudgment(3)">3（どちらともいえない）</button>
+  <button onclick="recordJudgment(2)">2（やや整合性なし）</button>
+  <button onclick="recordJudgment(1)">1（整合性なし）</button>
+  <button onclick="goBack()" style="background:#f0ad4e;">戻る</button>
+</div>
+<div class="download-buttons">
+  <button id="exitButton" style="display:none;">途中で終了する</button>
+</div>
+</body>
+</html>
